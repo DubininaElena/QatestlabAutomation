@@ -5,10 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.concurrent.TimeUnit;
-
-/**
- * Created by Владимир on 31.03.2017.
- */
 public class SeleniumDemo {
     public static void main(String[]args){
 
@@ -21,18 +17,21 @@ public class SeleniumDemo {
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        driver.get("http://prestashop.qatestlab.com.ua/ru/authentication?back=my-account");
+        driver.get("http://prestashop-automation.qatestlab.com.ua/admin147ajyvk0");
 
         WebElement loginField = driver.findElement(By.name("email"));
-        loginField.sendKeys("ocenka17061998@yandex.ua");
+        loginField.sendKeys("webinar.test@gmail.com");
 
         WebElement passwordField = driver.findElement(By.id("passwd"));
-        passwordField.sendKeys("17061998");
+        passwordField.sendKeys("Xcg7299bnSmMuRLp9ITw");
 
-        WebElement loginButton = driver.findElement(By.id("SubmitLogin"));
+        WebElement loginButton = driver.findElement(By.name("submitLogin"));
         loginButton.click();
 
-        WebElement logoutButton = driver.findElement(By.className("logout"));
+        WebElement button = driver.findElement(By.className("employee_avatar_small"));
+        button.click();
+
+        WebElement logoutButton = driver.findElement(By.id("header_logout"));
         logoutButton.click();
 
         driver.quit();
