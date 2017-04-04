@@ -66,26 +66,26 @@ public class SeleniumDemo1 {
         WebElement modules = driver.findElement(By.linkText("Modules"));
         modules.click();
         driver.navigate().refresh();
-        //WebElement titleModules = driver.findElement(By.linkText("Выбор модуля"));
-       // System.out.println(titleModules.getText());
+        WebElement titleModules = driver.findElement(By.className("breadcrumb"));
+        System.out.println(titleModules.getText());
 
         WebElement design = driver.findElement(By.linkText("Design"));
         design.click();
         driver.navigate().refresh();
-       // WebElement titleDesign = driver.findElement(By.linkText("Шаблоны > Шаблон"));
-       // System.out.println(titleDesign.getText());
+        WebElement titleDesign = driver.findElement(By.xpath(".//*[@id='content']/div[1]/div/h2"));
+        System.out.println(titleDesign.getText());
 
         WebElement delivery = driver.findElement(By.linkText("Доставка"));
         delivery.click();
         driver.navigate().refresh();
-        //WebElement titledelivery = driver.findElement(By.linkText("Перевозчики"));
-        //System.out.println(titledelivery.getText());
+        WebElement titledelivery = driver.findElement(By.cssSelector(".page-title"));
+        System.out.println(titledelivery.getText());
 
         WebElement paymentMethod = driver.findElement(By.linkText("Способ оплаты"));
         paymentMethod.click();
         driver.navigate().refresh();
-        //WebElement titlePaymentMethod = driver.findElement(By.linkText("Payment Methods"));
-       // System.out.println(titlePaymentMethod.getText());
+        WebElement titlePaymentMethod = driver.findElement(By.linkText("Payment Methods"));
+        System.out.println(titlePaymentMethod.getText());
 
         WebElement international = driver.findElement(By.linkText("International"));
         international.click();
@@ -105,11 +105,7 @@ public class SeleniumDemo1 {
         WebElement titleConfiguration= driver.findElement(By.linkText("Information"));
         System.out.println(titleConfiguration.getText());
 
-
-
-
-
-        //driver.quit();
+        driver.quit();
     }
 }
 
